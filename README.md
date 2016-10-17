@@ -88,4 +88,19 @@ $ mkfs.vfat /dev/sda1
 ```sh
 $ mkfs.ext4 /dev/sda5
 $ mkfs.ext4 /dev/sda6
-`
+```
+
+# Mounting your points (to install stuff) !
+```sh
+# MOUNTING THE ROOT /
+$ mkdir -p /mnt
+$ mount /dev/sda5 /mnt
+
+# MOUNTING THE BOOT /BOOT
+$ mkdir -p /mnt/boot
+$ mount /dev/sda1 /mnt/boot/
+
+# MOUNTING THE HOME /HOME
+$ mkdir -p /mnt/home
+$ mount /dev/sda6 /mnt/home/
+```
