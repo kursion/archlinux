@@ -41,6 +41,8 @@ Last sector ...: +200M
 Created a new partition 1 of type 'Linux' and size 200 MiB.
 Command (m for help): a
 The bootable flag on partition 1 is enabled now.
+Command (m for help): t
+Partition number 1 selected
 
 
 # CREATING THE EXTENDED PARTITION for / and /home
@@ -128,8 +130,13 @@ $ mount /dev/sda6 /mnt/home/
         $ vi /etc/vconsole.conf
         KEYMAP=ch_FR-latin1
 
-7. Finally, set the admin password: `$ passwd` 
-8. Exit the chroot and umount the disks:
+7. Install the boot system: 
+   - `pacman -S grub`
+   - `grub-install /dev/sda`
+   - `grub-mkconfig -o /boot/grub/grub.cfg`
+
+8. Finally, set the admin password: `$ passwd` 
+9. Exit the chroot and umount the disks:
         
         $ exit
         $ umount -R /mnt
