@@ -77,3 +77,15 @@ Syncing disks
 
 $ 
 ```
+
+## Formatting your partitions
+
+- Your boot partition should be in FAT32 format and located in `/dev/sda1`. Thus you should run:
+```sh
+$ mkfs.vfat /dev/sda1
+```
+- Your `/` (root) partition can be located at `/dev/sda5` and your `/home` partition can be located at `/dev/sda6`. You can format your partitions with whatever filesystem(s) you want. We choose `Ext4` for the purpose of this example, thus running:  
+```sh
+$ mkfs.ext4 /dev/sda5
+$ mkfs.ext4 /dev/sda6
+`
