@@ -123,7 +123,11 @@ $ mount /dev/sda6 /mnt/home/
         LANG=en_US.UTF-8
 
 
-Optionnal: if you set the keyboard layout, make the changes persistent in `/etc/vconsole.conf`:
+6. If you set the keyboard layout, make the changes persistent in `/etc/vconsole.conf`:
 
         $ vi /etc/vconsole.conf
         KEYMAP=ch_FR-latin1
+
+7. Finally, set the admin password: `$ passwd` 
+
+Restart and enjoy installing your tools :)
