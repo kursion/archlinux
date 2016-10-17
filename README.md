@@ -12,8 +12,8 @@ Here is how I installed ArchLinux and more...
 ## Tips
 To scroll in an old cool terminal use `SHIFT+PageUp` and `PageDown`
 
-## Keyboard
-`loadkeys fr_CH-latin1` 
+## Optionnal: Keyboard for Switzerland
+`$ loadkeys fr_CH-latin1` 
 
 ## Partition (/, /boot and /home) 
 Lets say that we have a hard drive of 20 GB and that we want to create the following partitions:
@@ -103,4 +103,27 @@ $ mount /dev/sda1 /mnt/boot/
 # MOUNTING THE HOME /HOME
 $ mkdir -p /mnt/home
 $ mount /dev/sda6 /mnt/home/
+```
+
+## Installing the basic ArchLinux
+`$ pacstrap /mnt base`
+
+## Generates Filesystem Table 
+`genfstab -U /mnt >> /mnt/etc/fstab`
+
+## Basic configuration of your system
+1. Chroot to your newly created system: `arch-chroot /mnt`
+2. Set the timezone: `ln -s /usr/share/zoneinfo/Europe/Zurich /etc/localtime`
+3. Optionnal: If your hardware clock is set in `UTC`: `$ hwclock --systohc`
+4. Uncomment `en_US.UTF-8`, `UTF-8` and other needed localizations in 
+   `/etc/locale.gen`, and generate them with: `$ locale-gen`
+5. Set the `LANG` variable in `/etc/local.conf` accordingly, for example:
+```sh
+$ vi /etc/locale.conf
+LANG=en_US.UTF-8
+```
+6. If you set the keyboard layout, make the changes persistent in `/etc/vconsole.conf`:
+```sh
+$ vi /etc/vconsole.conf
+KEYMAP=ch_FR-latin1
 ```
