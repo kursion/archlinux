@@ -118,12 +118,12 @@ $ mount /dev/sda6 /mnt/home/
 4. Uncomment `en_US.UTF-8`, `UTF-8` and other needed localizations in 
    `/etc/locale.gen`, and generate them with: `$ locale-gen`
 5. Set the `LANG` variable in `/etc/local.conf` accordingly, for example:
-   ```sh
-   $ vi /etc/locale.conf
-   LANG=en_US.UTF-8
-   ```
-6. If you set the keyboard layout, make the changes persistent in `/etc/vconsole.conf`:
-   ```sh
-   $ vi /etc/vconsole.conf
-   KEYMAP=ch_FR-latin1
-   ```
+
+        $ vi /etc/locale.conf
+        LANG=en_US.UTF-8
+
+
+Optionnal: if you set the keyboard layout, make the changes persistent in `/etc/vconsole.conf`:
+
+        $ vi /etc/vconsole.conf
+        KEYMAP=ch_FR-latin1
