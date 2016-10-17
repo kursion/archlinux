@@ -122,6 +122,7 @@ $ mount /dev/sda6 /mnt/home/
 $ vi /etc/locale.conf
 LANG=en_US.UTF-8
 ```
+
 6. If you set the keyboard layout, make the changes persistent in `/etc/vconsole.conf`:
 ```sh
 $ vi /etc/vconsole.conf
