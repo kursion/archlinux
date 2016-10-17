@@ -129,5 +129,10 @@ $ mount /dev/sda6 /mnt/home/
         KEYMAP=ch_FR-latin1
 
 7. Finally, set the admin password: `$ passwd` 
-
-Restart and enjoy installing your tools :)
+8. Exit the chroot and umount the disks:
+        
+        $ exit
+        $ umount -R /mnt
+        $ restart
+        
+Enjoy installing your tools :)
