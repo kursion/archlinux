@@ -309,10 +309,23 @@ XTerm*background     : _background
 XTerm*cursorColor    : _cursorColor
 ```
 
-Then don't forget the following command so that the changes will take effect: `$ xrdb -merge ~/.Xresources`
-NOTE: you sould probably install the `ttf-dejavu` font 
+Don't forget to add the following command into your `~/.xinitrc` in order to: 
+
+    $ echo "xrdb -merge ~/.Xresources" >> .xinitrc
+
+And logout !
+
+*NOTE: you sould probably install the `ttf-dejavu` font*
+
+# Install a font
+
+1. Copy paste the `.ttf` file into /usr/share/fonts/TTF (eg: `sudo cp ~/DejaVu Sans Mono for Powerline.tff /usr/share/fonts/TTF`).
+2. `$ sudo fc-cache`
+3. Optionnal: to use it, edit your .Xresources by updating the `xterm*faceName` line to:
+`xterm*faceName: DejaVu Sans Mono for Powerline`
 
 # Recommended tools and comments
 - On surface Pro 4: I was facing an issue related to the resolution. Apparently, the resolution was very big causing the fonts and windows to be very small. To fixes this, I went into the Configuration of the VM and choosed a factor of 200% for the Display. Then I installed `arandr` and choosed a smaller resolution.
 - Easily access your applications using DMenu: `$ pacman -S dmenu`
 - Chromium can't be run with the root user.
+- Install Clipit for system clipboard: `$ sudo pacman -S clipit` 
