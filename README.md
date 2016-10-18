@@ -152,11 +152,50 @@ $ mount /dev/sda6 /mnt/home/
          Found fallback initrd image(s) in /boot: initramfs-linux-fallback.img
          done
 
-8. Finally, set the admin password: `$ passwd` 
-9. Exit the chroot and umount the disks:
+8. Finally, set the admin password: 
+         
+         $ passwd
+         
+9. Enable DHCPCD to have internet
+       
+         $ systemctl start dhcpcd
+         
+10. Exit the chroot and umount the disks:
         
         $ exit
         $ umount -R /mnt
         $ restart
         
 Enjoy installing your tools :)
+
+# Virtualbox
+
+```sh
+$ pacman -S mesa-libgl virtualbox
+[...]    # Choose 'virtualbox-host-modules-arch' for linux kernel
+         # which should be number 2
+Choose a number (default is 1): 2
+[...]
+$ modprobe vboxdrv
+```
+
+# Xorg
+The graphical server can be install like that:
+
+```sh
+$ pacman -S xorg-server xorg-server-utils xorg-xinit xterm
+[...]    # Choose the 'xf86-input-evdev' which should 
+         # be the number 1
+Choose a number (default is 1): 1
+```
+
+# Install the video driver 
+You need to install the corresponding driver for your graphic card. You can check what to install in the presented table on [Archlinux Xorg](https://wiki.archlinux.org/index.php/xorg).
+For VirtualBox, you should install `$ pacman -S xf86-video-vesa`
+
+# I3
+
+I'm in love with [i3 Windows Manager](https://i3wm.org/). But of course you can choose a different one. Here how to install it:
+
+1. `$ pacman -S i3`
+2. `$ echo "exec i3" > ~/.xinitrc`
