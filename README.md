@@ -139,7 +139,7 @@ $ mount /dev/sda6 /mnt/home/
 6. If you set the keyboard layout, make the changes persistent in `/etc/vconsole.conf`:
 
         $ vi /etc/vconsole.conf
-        KEYMAP=ch_FR-latin1
+        KEYMAP=fr_CH-latin1
 
 7. Install the boot system: 
    - `pacman -S grub`
