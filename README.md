@@ -205,6 +205,20 @@ I'm in love with [i3 Windows Manager](https://i3wm.org/). But of course you can 
 # Set Keyboard layout in Xorg
 `$ setxkbmap ch fr`
 
+# Usefull tools
+`$ pacman -S wget git`
+
+# ZSH
+Installing ZSH with the great Oh-my-ZSH enhancement suite.
+
+```sh
+$ pacman -S zsh
+$ sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+```
+
+NOTE: don't forget to relog yourself to have the new shell
+
 # Recommended tools and comments
 - On surface Pro 4: I was facing an issue related to the resolution. Apparently, the resolution was very big causing the fonts and windows to be very small. To fixes this, I went into the Configuration of the VM and choosed a factor of 200% for the Display. Then I installed `arandr` and choosed a smaller resolution.
-- `pacman -S dmenu`
+- Easily access your applications using DMenu: `$ pacman -S dmenu`
+- Chromium can't be run with the root user.
