@@ -108,7 +108,7 @@ $ mount /dev/sda6 /mnt/home/
 ```
 
 ## Installing the basic ArchLinux
-`$ pacstrap /mnt base`
+`$ pacstrap /mnt base base-devel vim linux`
 
 ## Generates Filesystem Table 
 `genfstab -U /mnt >> /mnt/etc/fstab`
@@ -145,6 +145,12 @@ $ mount /dev/sda6 /mnt/home/
    - `pacman -S grub`
    - `grub-install /dev/sda`
    - `grub-mkconfig -o /boot/grub/grub.cfg`
+   
+         Generating grub configuration file...
+         Found linux image: /boot/vmlinuz-linux
+         Found initrd image(s) in /boot: initramfs-linux.img
+         Found fallback initrd image(s) in /boot: initramfs-linux-fallback.img
+         done
 
 8. Finally, set the admin password: `$ passwd` 
 9. Exit the chroot and umount the disks:
