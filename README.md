@@ -171,7 +171,7 @@ Enjoy installing your tools :)
 # Virtualbox
 
 ```sh
-$ pacman -S mesa-libgl virtualbox
+$ pacman -S mesa-libgl virtualbox virtualbox-guest-utils 
 [...]    # Choose 'virtualbox-host-modules-arch' for linux kernel
          # which should be number 2
 Choose a number (default is 1): 2
@@ -199,3 +199,6 @@ I'm in love with [i3 Windows Manager](https://i3wm.org/). But of course you can 
 
 1. `$ pacman -S i3`
 2. `$ echo "exec i3" > ~/.xinitrc`
+
+# Set Keyboard layout in Xorg
+`$ setxkbmap ch fr`
