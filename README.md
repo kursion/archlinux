@@ -114,16 +114,27 @@ $ mount /dev/sda6 /mnt/home/
 `genfstab -U /mnt >> /mnt/etc/fstab`
 
 ## Basic configuration of your system
-1. Chroot to your newly created system: `arch-chroot /mnt`
-2. Set the timezone: `ln -s /usr/share/zoneinfo/Europe/Zurich /etc/localtime`
-3. Optionnal: If your hardware clock is set in `UTC`: `$ hwclock --systohc`
+1. Chroot to your newly created system:
+
+        arch-chroot /mnt
+        
+2. Set the timezone: 
+        
+        ln -s /usr/share/zoneinfo/Europe/Zurich /etc/localtime
+        
+3. Optionnal: If your hardware clock is set in `UTC`: 
+        
+        $ hwclock --systohc
+        
 4. Uncomment `en_US.UTF-8`, `UTF-8` and other needed localizations in 
-   `/etc/locale.gen`, and generate them with: `$ locale-gen`
+   `/etc/locale.gen`, and generate them with: 
+   
+        $ locale-gen
+        
 5. Set the `LANG` variable in `/etc/local.conf` accordingly, for example:
 
         $ vi /etc/locale.conf
         LANG=en_US.UTF-8
-
 
 6. If you set the keyboard layout, make the changes persistent in `/etc/vconsole.conf`:
 
