@@ -176,10 +176,13 @@ $ pacman -S mesa-libgl virtualbox virtualbox-guest-utils
          # which should be number 2
 Choose a number (default is 1): 2
 [...]
-$ modprobe vboxdrv vboxguest vboxsf vboxvideo
 $ systemctl enable vboxservice.service
+$ VBoxClient --clipboard --draganddrop --seamless --display --checkhostversion
+(OR $ VBoxClient-all) TODO: put it in .xprofile to see
 $ reboot
 ```
+
+*more information [Archlinux - Virtualbox](https://wiki.archlinux.org/index.php/VirtualBox)
 
 # Xorg
 The graphical server can be install like that:
